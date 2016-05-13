@@ -49,9 +49,9 @@
                 <include>*/**</include>
             </includes>
         </fileSet>
-        
+
         <!--copying webapps-->
-		<fileSet>
+        <fileSet>
             <directory>../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/repository/deployment/server/webapps</directory>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps
             </outputDirectory>
@@ -59,7 +59,7 @@
                 <include>**/**.war</include>
             </includes>
         </fileSet>
-        
+
         <!--copying runtimes-->
         <fileSet>
             <directory>../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/lib/runtimes</directory>
@@ -83,19 +83,19 @@
         </fileSet>
 
         <!-- Commenting out multitenancy features since ML does not support it -->
-        
+
         <!--Multitenancy related file -->
         <!--<fileSet>-->
-            <!--<directory>-->
-                <!--../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/multitenancy/-->
-            <!--</directory>-->
-            <!--<outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/multitenancy</outputDirectory>-->
-            <!--<includes>-->
-                <!--<include>**/stratos.xml</include>-->
-                <!--<include>**/multitenancy-packages.xml</include>-->
-                <!--&lt;!&ndash;<include>**/usage-throttling-agent-config.xml</include>&ndash;&gt;-->
-                <!--<include>**/cloud-services-desc.xml</include>-->
-            <!--</includes>-->
+        <!--<directory>-->
+        <!--../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/multitenancy/-->
+        <!--</directory>-->
+        <!--<outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/multitenancy</outputDirectory>-->
+        <!--<includes>-->
+        <!--<include>**/stratos.xml</include>-->
+        <!--<include>**/multitenancy-packages.xml</include>-->
+        <!--&lt;!&ndash;<include>**/usage-throttling-agent-config.xml</include>&ndash;&gt;-->
+        <!--<include>**/cloud-services-desc.xml</include>-->
+        <!--</includes>-->
         <!--</fileSet>-->
 
         <fileSet>
@@ -108,7 +108,7 @@
             </includes>
         </fileSet>
 
-	<fileSet>
+        <fileSet>
             <directory>
                 ../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/datasources/
             </directory>
@@ -128,7 +128,7 @@
             </includes>
         </fileSet>
 
-	<fileSet>
+        <fileSet>
             <directory>
                 ../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/spark/
             </directory>
@@ -136,9 +136,9 @@
             <includes>
                 <include>**/**</include>
             </includes>
-	    <excludes>
-		<exclude>**/spark-defaults.conf</exclude>
-	    </excludes>
+            <excludes>
+                <exclude>**/spark-defaults.conf</exclude>
+            </excludes>
 
         </fileSet>
 
@@ -158,16 +158,16 @@
                 <include>**/**</include>
             </includes>
         </fileSet>
-	<fileSet>
+        <fileSet>
             <directory>
-            	../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/dbscripts/metrics/
+                ../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/dbscripts/metrics/
             </directory>
             <outputDirectory>${pom.artifactId}-${pom.version}/dbscripts/metrics</outputDirectory>
             <includes>
-            	<include>**/*.sql</include>
+                <include>**/*.sql</include>
             </includes>
-    	</fileSet>
-	<fileSet>
+        </fileSet>
+        <fileSet>
             <directory>
                 ../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/dbscripts/ml/
             </directory>
@@ -200,6 +200,40 @@
             </excludes>
             <fileMode>755</fileMode>
         </fileSet>
+
+        <!--Copying directories to zip-->
+        <fileSet>
+            <directory>
+                ../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/repository/deployment/server/datasets/
+            </directory>
+            <outputDirectory>wso2ml-${pom.version}/repository/deployment/server/datasets</outputDirectory>
+            <fileMode>755</fileMode>
+        </fileSet>
+
+        <fileSet>
+            <directory>
+                ../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/repository/deployment/server/projects
+            </directory>
+            <outputDirectory>wso2ml-${pom.version}/repository/deployment/server/projects</outputDirectory>
+            <fileMode>755</fileMode>
+        </fileSet>
+
+        <fileSet>
+            <directory>
+                ../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/repository/deployment/server/analyses
+            </directory>
+            <outputDirectory>wso2ml-${pom.version}/repository/deployment/server/analyses</outputDirectory>
+            <fileMode>755</fileMode>
+        </fileSet>
+
+        <fileSet>
+            <directory>
+                ../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/repository/deployment/server/modeldata
+            </directory>
+            <outputDirectory>wso2ml-${pom.version}/repository/deployment/server/modeldata</outputDirectory>
+            <fileMode>755</fileMode>
+        </fileSet>
+
     </fileSets>
 
     <files>
@@ -254,7 +288,7 @@
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/etc</outputDirectory>
             <fileMode>644</fileMode>
         </file>
-	<file>
+        <file>
             <source>
                 ../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/machine-learner.xml
             </source>
@@ -265,10 +299,10 @@
         <!-- Commenting out multitenancy features since ML does not support it -->
 
         <!--<file>-->
-            <!--<source>-->
-                <!--../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/multitenancy/tenant-mgt.xml-->
-            <!--</source>-->
-            <!--<outputDirectory>${pom.artifactId}-${pom.version}/repository/conf</outputDirectory>-->
+        <!--<source>-->
+        <!--../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/multitenancy/tenant-mgt.xml-->
+        <!--</source>-->
+        <!--<outputDirectory>${pom.artifactId}-${pom.version}/repository/conf</outputDirectory>-->
         <!--</file>-->
         <!--file>
             <source>
@@ -277,7 +311,7 @@
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/datasources/</outputDirectory>
             <fileMode>644</fileMode>
         </file-->
-	<file>
+        <file>
             <source>../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/datasources/ml-datasources.xml</source>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/datasources/</outputDirectory>
         </file>
@@ -314,16 +348,16 @@
             <source>../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/etc/h2o-config.xml</source>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/etc/</outputDirectory>
         </file>
-	<file>
+        <file>
             <source>src/main/conf/spark/spark-defaults.conf</source>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/spark/</outputDirectory>
         </file>
-	<file>
+        <file>
             <source>../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/repository/database/WSO2ML_DB.h2.db</source>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/database/</outputDirectory>
             <fileMode>644</fileMode>
         </file>
-	<file>
+        <file>
             <source>src/main/conf/etc/ml-email-templates.xml</source>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/email/</outputDirectory>
         </file>
@@ -336,26 +370,26 @@
             <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
-	<file>
+        <file>
             <source>../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/metrics.xml</source>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/</outputDirectory>
             <filtered>false</filtered>
         </file>
-    	<file>
+        <file>
             <source>../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/metrics.properties</source>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/</outputDirectory>
             <filtered>false</filtered>
-       	</file>
-    	<file>
+        </file>
+        <file>
             <source>../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/datasources/metrics-datasources.xml</source>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/datasources/</outputDirectory>
             <fileMode>644</fileMode>
-    	</file>
-    	<file>
+        </file>
+        <file>
             <source>../p2-profile/target/wso2carbon-core-${carbon.kernel.version}/repository/database/WSO2METRICS_DB.h2.db</source>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/database/</outputDirectory>
             <fileMode>644</fileMode>
-    	</file>
+        </file>
         <file>
             <source>src/main/conf/sec.policy</source>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/</outputDirectory>
@@ -367,4 +401,6 @@
             <fileMode>644</fileMode>
         </file>
     </files>
+
 </assembly>
+
